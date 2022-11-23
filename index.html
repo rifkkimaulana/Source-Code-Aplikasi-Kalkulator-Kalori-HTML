@@ -1,0 +1,218 @@
+
+<!--
+*  Copyright (C) 2022 RIFKI MAULANA
+*  email. rifkkimaulana@gmail.com
+*
+*  This program is free software; you can redistribute it and/or modify
+*  it under the terms of the GNU General Public License as published by
+*  the Free Software Foundation; either version 2 of the License, or
+*  (at your option) any later version.
+*
+*  This program is distributed in the hope that it will be useful,
+*  but WITHOUT ANY WARRANTY; without even the implied warranty of
+*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*  GNU General Public License for more details.
+*
+*  You should have received a copy of the GNU General Public License
+*  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<!--Heading-->
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Judul Halaman-->
+    <title>Home - KALKULATOR KALORI</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/Footer-Basic-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="shortcut icon" href="img/icon.png" />
+
+    
+    <style>
+        #loading, #results {
+          display: none;
+        }
+        #loading {
+          width: 100%;
+        }
+    </style>
+
+</head>
+
+<!-- isi halaman -->
+<body>
+
+    <!--NAVBAR-->
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+        <div class="container"><a class="navbar-brand logo" href="#">KALKULATOR KALORI</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarNav"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!--Halaman Inti & Logo-->
+    <main class="page lanidng-page">
+        <section class="portfolio-block block-intro">
+            <div class="container">
+                <div class="avatar" style="background: url(&quot;assets/img/avatars/WhatsApp%20Image%202022-11-23%20at%2022.03.42.jpeg&quot;) center / contain;box-shadow: 0px 0px 3px;width: 174px;height: 174px;"></div>
+                <div class="about-me">
+                    <p style="font-weight: bold;box-shadow: 0px 0px;"><br><span style="color: rgb(42, 95, 145);">APLIKASI KALKULATOR KALORI</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <section class="portfolio-block website gradient" style="padding: 30px 0px;opacity: 1;filter: blur(0px);backdrop-filter: opacity(1);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6"> <!--row kiri-->
+                    
+                            
+                              <form id="calorie-form">
+                                <h3> Silahkan hitung kalori anda disini!</h3></br>
+                  
+                                <div class="form-group row">
+                                  <label for="age" class="col-sm-2 col-form-label">Umur:</label>
+                                  <div class="col-sm-10">
+                                    <input type="number" class="form-control" id="age" placeholder="Masukan Umur kamu antara 15 - 80 Tahun">
+                                  </div>
+                                </div>
+                  
+                                <fieldset class="form-group">
+                                  <div class="row">
+                                    <legend class="col-form-label col-sm-2 pt-0">Jenis Kelamin</legend>
+                                    <div class="col-sm-10" id="form-radio">
+                                      <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="male" name="customRadioInline1" class="custom-control-input" checked="checked">
+                                        <label class="custom-control-label" for="male">Laki - laki</label>
+                                      </div>
+                                      <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="female" name="customRadioInline1" class="custom-control-input">
+                                        <label class="custom-control-label" for="female">Wanita</label>
+                                      </div>  
+                                    </div>
+                                  </div> 
+                                </fieldset> 
+                  
+                                <div class="form-group row">
+                                  <label for="weight" class="col-sm-2 col-form-label">Berat Badan:</label>
+                                  <div class="col-sm-10">
+                                    <input type="number" class="form-control" id="weight" placeholder="Masukan berat badan dalam satua Kg.">
+                                  </div>
+                                </div>
+                  
+                                <div class="form-group row">
+                                  <label for="height" class="col-sm-2 col-form-label">Tinggi:</label>
+                                  <div class="col-sm-10">
+                                    <input type="number" class="form-control" id="height" placeholder="Masukan tinggi kamu dalam satuan Cm.">
+                                  </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                  <legend class="col-form-label col-sm-2 pt-0">Aktifitas:</legend>
+                                  <select class="custom-select col-sm-10" id="list">
+                                    <option selected value="1">Menetap (sedikit atau tidak ada olahraga)</option>
+                                    <option value="2">Aktif ringan (olahraga ringan/olahraga 1-3 hari/minggu)</option>
+                                    <option value="3">Cukup aktif (olahraga sedang/olahraga 3-5 hari/minggu)</option>
+                                    <option value="4">Sangat aktif (olahraga keras/olahraga 6-7 hari seminggu)</option>
+                                    <option value="5">Ekstra aktif (olahraga/olahraga berat & pekerjaan fisik atau 2x latihan)</option>
+                                  </select>
+                                </div>
+                  
+                                <div class="form-group">
+                                  <input type="submit" value="Hitung Kalori Saya" class="btn btn-primary btn-block">
+                                </div>
+                  
+                              </form>
+                            </br>
+                  
+                              <div id="loading">
+                                <button class="buttonload">
+                                    <i class="fa fa-refresh fa-spin"></i>Silahkan tunggu, kami sedang menghitung
+                                  </button>
+                              </div>
+
+                            
+                  
+                              <div id="results" class="pt-4">
+                                <h5>Total Kalori Kamu Adalah: </h5>
+                                <div class="form-group">
+                                  <div class="input-group">
+                                    <input type="number" class="form-control" id="total-calories" disabled>
+                                  </div>
+                                </div>                       
+                              </div>
+                            </br></br>
+                           
+
+                </div> <!--end row kiri-->
+
+                <div class="col-md-6"> <!--row kanan-->
+                    <form id="calorie-form">
+                        <div class="container">
+                            <div class="avatar" style="background: url(./img/20200220050556.png) center / contain;width: 174px;height: 174px;">
+                            </div>
+                            <h5>PENGATURAN POLA MAKAN</h5>
+                            
+                        </div>
+                        
+                        <p>Tujuan dari Pengaturan Pola makan yaitu:</br>
+                        1. Mempertahankan kadar gula darah mendekati normal</br>
+                        2. Mempertahankan berat badan ideal</br>
+                        3. Mencegah komplikasi</br>
+                        4. Meningkatkan kualitas hidup</p>
+
+                        <p>Pengaturan pola makan melalui 3J</br>
+                        1. Jadwal makan (3x makan dan 3 x selingan)</br>
+                        2. Jumlah makan (energi sesuai dengan kebutuhan tubuh)</br>
+                        3. Jenis makanan (sumber makanan yang dianjurkan dan dibatasi)</p>
+
+                        <p>Untuk mengetahui jumlah makanan sesuai kebutuhan kalori maka dapat dilakukan dengan melakukan perhitungan kalori dengan kalkulator kalori.</p>
+                    </form>
+
+                </div> <!--end row kanan-->
+
+            </div>
+        </div>
+        </section>
+        
+
+
+
+        <!--FOOTER-->
+    </br>
+        <footer class="text-center">
+            <div>
+                <p class="mb-0">Copyright © Kelompok Sistem Informasi Keperawatan</p>
+                <small> (Dila Nur Aidah 2101680 | Ai Kurnia 2107528 | Wianetta Nurramadhanti K 2109535 | Trisha Kania Sugandi 2109557)</small>
+            </div>
+        </footer>
+    </br>
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
